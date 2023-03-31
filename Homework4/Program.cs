@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Homework4;
 
 class HomeWork4
 {
@@ -21,15 +22,85 @@ class HomeWork4
         
         
         
-      
+        //task5
+        //Console.WriteLine(task5("./input-files/task5.txt"));
+
+
+        //task6
+        String pathTask6 = "./input-files/IMDB.csv";
+        Movie[] movies = task6(pathTask6);
+        //PrintArr(movies);
+        //Console.WriteLine(movies.Length);
+
+
+        // task 6.1
+        // var top5 = movies.OrderByDescending(x => x.VoteAverage).Take(5).ToArray();
+        // PrintArr(top5);
+        // var antitop5 = movies.OrderBy(x => x.VoteAverage).Take(5).ToArray();
+        // PrintArr(antitop5);
+
+        //task 6.2
+        // int ruMovieRateUnder7 = movies.Where(x => x.OriginalLanguage == "ru" && x.VoteAverage > 7)
+        //     .ToArray().Length;
+        // Console.WriteLine(ruMovieRateUnder7);
+
+        //task 6.3
+        //Console.WriteLine(randomMovie(movies,"ru",6.2));
         
+      
+    }
+    
+    /// <summary>
+    /// рандомный фильм с заданным языком оригинала и оценкой выше заданного порога.
+    /// </summary>
+    /// <param name="movies"></param>
+    /// <param name="language"></param>
+    /// <param name="minRate"></param>
+    /// <returns></returns>
+    private static Movie randomMovie(Movie[] movies, String language, double minRate)
+    {
+        try // на случай неправильного ввода данных
+        {
+            Movie[] pred = movies.Where(x => x.OriginalLanguage == language && x.VoteAverage > minRate).ToArray();
+            int lenArr = pred.Length;
+            Random r = new Random();
+            Movie randomMovie = pred[r.Next(0, lenArr)];
+            return randomMovie;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
 
-
-
-
-
-
-
+    /// <summary>
+    /// функцию, преобразующую данный файл в список объектов класса Movie. Фильмы с количеством оценок меньше 100 в список не добавлять.
+    /// </summary>
+    /// <param name="pathTask6"></param>
+    /// <returns></returns>
+    private static Movie[] task6(string pathTask6)
+    {
+        List<Movie> listMovie = new List<Movie>();
+        
+        String[] allFilms = File.ReadAllLines(pathTask6).Skip(1).ToArray();
+        for (int i = 0; i < allFilms.Length; i++)
+        {
+            try
+            {
+                int mark = int.Parse(allFilms[i].Split(',')[3]);
+                if (mark >= 100)
+                {
+                    Movie movie = new Movie(allFilms[i]);
+                    listMovie.Add(movie);
+                }
+            }
+            catch (Exception e)
+            {
+            }
+        }
+        
+        return listMovie.ToArray();
     }
     
     
