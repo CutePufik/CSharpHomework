@@ -6,8 +6,8 @@ class HomeWork4
     static void Main(string[] args)
     {
         //task1
-        //CreateFileWithRandomNumbers("task1.dat",10,0.9999,1);
-        //printFileDoubleNumbers("task1.dat");
+        // CreateFileWithRandomNumbers("task1.dat",10,-50,50);
+        // printFileDoubleNumbers("task1.dat");
         
         
         //task2
@@ -30,22 +30,21 @@ class HomeWork4
         String pathTask6 = "./input-files/IMDB.csv";
         Movie[] movies = task6(pathTask6);
         //PrintArr(movies);
-        //Console.WriteLine(movies.Length);
-
-
+        Console.WriteLine(movies.Length);
+        
         // task 6.1
-        // var top5 = movies.OrderByDescending(x => x.VoteAverage).Take(5).ToArray();
-        // PrintArr(top5);
-        // var antitop5 = movies.OrderBy(x => x.VoteAverage).Take(5).ToArray();
-        // PrintArr(antitop5);
+        var top5 = movies.OrderByDescending(x => x.VoteAverage).Take(5).ToArray();
+        PrintArr(top5);
+        var antitop5 = movies.OrderBy(x => x.VoteAverage).Take(5).ToArray();
+        PrintArr(antitop5);
 
         //task 6.2
-        // int ruMovieRateUnder7 = movies.Where(x => x.OriginalLanguage == "ru" && x.VoteAverage > 7)
-        //     .ToArray().Length;
-        // Console.WriteLine(ruMovieRateUnder7);
+        int ruMovieRateUnder7 = movies.Where(x => x.OriginalLanguage == "ru" && x.VoteAverage > 7)
+            .ToArray().Length;
+        Console.WriteLine(ruMovieRateUnder7);
 
         //task 6.3
-        //Console.WriteLine(randomMovie(movies,"ru",6.2));
+        Console.WriteLine(randomMovie(movies,"ru",6.2));
         
       
     }
