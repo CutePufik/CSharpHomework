@@ -1,70 +1,64 @@
 ﻿
 
+using System;
+using System.Collections.Generic;
 using HomeworkATM;
 
 class myClass
 {
     static void Main(string[] args)
     {
-        Card card = new Card(0, "1111111111111111", "pudge", "12/25", "VTB");
-        ATM atm = new ATM("VTB", "Mihalkovich");
-        
-        
-        Dictionary<int, int> inputSum = new Dictionary<int, int>()
-        {
-            { 100, 3 },
-            { 5, 10 },
-            { 1000, 1 },
-            { 5000, 2 },
-        };
-        
-        atm.putMoney(card,inputSum);
-        Console.WriteLine(atm.CashAmount);
-        Console.WriteLine(card._balance);
-        
-        atm.takeMoney(card,1312);
-        atm.takeMoney(card,1355);
-        atm.takeMoney(card,1350);
-        
-        Console.WriteLine(atm);
-        Console.WriteLine();
-        var s = "Qmleposzmgl";
-        atm.pickUp(s);
-        
-        Console.WriteLine(atm);
-        
         
         ////////////////////////////////////////////
-        Console.WriteLine();
+        Card card2 = new Card(0, "1111111111111111", "pudge", "12/25", "VTB");
+        ATM atm2 = new ATM("VTB", 74306199653196);
         
-        
-        
-        // Card card2 = new Card(0, "1111111111111111", "pudge", "12/25", "VTB");
-        // ATM atm2 = new ATM("Sber", "Progammer");
-        //
-        //
-        // Dictionary<int, int> inputSum2 = new Dictionary<int, int>()
-        // {
-        //     { 100, 3 },
-        //     { 5, 10 },
-        //     { 1000, 1 },
-        //     { 5000, 2 },
-        // };
-        // atm2.putMoney(card2,inputSum2);
-        // Console.WriteLine(card2._balance);
-        // Console.WriteLine(atm2);
-        //
-        //
-        // atm2.takeMoney(card2,1350);
-        // var s2 = "Qmleposzmgl";
-        // atm2.pickUp(s2);
-        // Console.WriteLine(atm2);
-        
+        Banknote[] inputSum2 = 
+        {
+            new (100, "bh12345672"),new (100, "bh12345661"),
+            new (1000, "yz12345673"), new (100, "fp11112222"), new (100, "ht22221111"),
+            new (100, "ht22221111"), new (1000, "yz12345673"),new (500,"ht22221111")
+        };
+        atm2.putMoney(card2,inputSum2);
+        Console.WriteLine(card2._balance);
+        Console.WriteLine(atm2.moneyCassette.Count);
+        Console.WriteLine(atm2.CashAmount);
         
         
 
-     
+        atm2.takeMoney(card2,200);
+        Console.WriteLine(atm2.CashAmount);
+        Console.WriteLine(atm2.moneyCassette.Count);
+        
+        var s2 = 1428394874562349;
+        atm2.pickUp(s2);
+        Console.WriteLine(atm2.CashAmount);
+        
+        Console.WriteLine(atm2);
+      
 
+        
+    //6 task
+    /*
+    // дорогой дневник,это было отвратительно
+    // менять было ужасно,но я хоть как-то смог добиться не слишком плохого кода(вообще нет,он худший)
+    // некоторые повторяющиеся функции можно было вынести в отдельные методы,но для этого нужно было продумать заранее все :(
+    // код на второй дз вызвал апатию что-то исправлять и менять :(
+    // методы названы неоднозначны
+    // стал заложником своего недоКода
+    // нет,это не слезы,просто пересмотрел свой код после последнего задания
+    // кпд решения вообще отрицательный
+    // я устал над этим кодом работать
+    // я стараюсь быть лучше,честно.....
+    // не советую прочтение этого кода
+    // -1/10
+    /*
+     * я очень огорчен, что снова не смог решить задание. Я старался изо всех сил и потратил много времени, но, кажется,
+     * у меня не получается взять верх над этой задачей.
+     *  если бы мне дали возможность заново переписать код домашнего задания, то код получился бы такой же, что досадно
+     * этот код не достоин существования, он не адаптирован к настоящей жизни
+     *  
+     */  
 
     }
 }
