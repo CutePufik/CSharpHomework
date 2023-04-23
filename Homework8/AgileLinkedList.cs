@@ -124,7 +124,7 @@ public class AgileLinkedList<T>
             throw new Exception();
         
         
-        Node<T> currNode = First as Node<T>;
+        Node<T> currNode = First as Node<T>;  // это райдер подсказал как сделать,я вообще не при чем
         
         for (int i = 0; i < position-1; i++)
         {
@@ -164,6 +164,21 @@ public class AgileLinkedList<T>
 
         first = current.Next; 
         current.Next = null; 
+    }
+
+    public Node<T> getRandomElem()
+    {
+        Random r = new Random();
+        var number = r.Next(0, Count);
+        
+        Node<T> currNode = First;
+        
+        for (int i = 0; i < number; i++)
+        {
+            currNode = currNode.Next;
+        }
+
+        return currNode;
     }
     
     public void reverse()

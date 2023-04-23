@@ -43,9 +43,14 @@ class MyClass
         // Console.WriteLine(list5);
         
         //task5
-        AgileLinkedList<int> list6 = new(new[] { 1,2,3,4 });
-        list6.reverse();
-        Console.WriteLine(list6);
+        // AgileLinkedList<int> list6 = new(new[] { 1,2,3,4 });
+        // list6.reverse();
+        // Console.WriteLine(list6);
         
+        //task 7
+        AgileLinkedList<int> list7 = new(new[] { 1,2,3,4 });
+        var a = list7.getRandomElem();
+        Console.WriteLine(a.ToString());
+
     }
 }
