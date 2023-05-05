@@ -54,4 +54,20 @@ public class TreeNode<T>
     
         return IsEqual(node1.Left, node2.Left) && IsEqual(node1.Right, node2.Right);
     }
+    public TreeNode<T> Copy()
+    {
+        TreeNode<T> res = new TreeNode<T>(Data);
+        
+        if (Left != null)
+        {
+            res.Left = Left.Copy();
+        }
+        
+        if (Right != null)
+        {
+            res.Right = Right.Copy();
+        }
+
+        return res;
+    }
 }

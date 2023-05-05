@@ -42,6 +42,7 @@ public static class TreeUtils
         Postfix(r.Right);
         Console.Write(r.Data + " ");
     }
+    
 
 
 
