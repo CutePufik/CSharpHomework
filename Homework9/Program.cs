@@ -4,7 +4,6 @@ using BinaryTrees;
 
 public class myClass
 {
-
     static void Main(string[] args)
     {
         //task 1
@@ -13,17 +12,9 @@ public class myClass
         Console.WriteLine(bdp.Contains(-11));
         bdp.Add(-11);
         Console.WriteLine(bdp.Contains(-11));
-        
+
         var tree = TreeUtils.GetSampleIntTree1();
         TreeUtils.Prefix(tree);
         Console.WriteLine();
-        
-        
     }
-    
-    
-    
-    
-    
-    
 }

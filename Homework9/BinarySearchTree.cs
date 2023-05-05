@@ -43,7 +43,7 @@ public class BinarySearchTree
     }
     
   
-    /// log2 по сути
+    
     public bool Contains(int x)
     {
         var currentNode = root;
@@ -56,8 +56,9 @@ public class BinarySearchTree
         
         return false;
     }
-    
 
+    
+   
     
     public void PrintTreeInfix<T>()
     {

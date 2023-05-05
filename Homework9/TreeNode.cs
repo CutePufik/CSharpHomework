@@ -33,4 +33,25 @@ public class TreeNode<T>
         Left = left;
         Right = right;
     }
+    
+    
+    public static bool IsEqual(TreeNode<int> node1, TreeNode<int> node2)
+    {
+        if (node1 == null && node2 == null)
+        {
+            return true;
+        }
+    
+        if (node1 == null || node2 == null)
+        {
+            return false;
+        }
+    
+        if (node1.Data != node2.Data)
+        {
+            return false;
+        }
+    
+        return IsEqual(node1.Left, node2.Left) && IsEqual(node1.Right, node2.Right);
+    }
 }
